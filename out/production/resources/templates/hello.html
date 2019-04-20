@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.min.css">
+<link th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.min.css}" rel="stylesheet" />
+<script type="text/javascript" th:src="@{/webjars/jquery/3.2.1/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/webjars/bootstrap/4.0.0/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.24/vue.min.js"></script>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello Thymeleaf</title>
+</head>
+<body>
+<h1 th:text="${message}"></h1>
+<div class="container text-white">
+    <div class="row">
+        <div class="col-4 border bg-success">
+            test1
+        </div>
+    </div>
+</div>
+
+<!--<div id="app" class="container">-->
+<!--    {{message}}-->
+<!--</div>-->
+<!--<script>-->
+<!--    new Vue({-->
+<!--        el: '#app',-->
+<!--        data: {-->
+<!--            message: 'Test Vue.js!'-->
+<!--        }-->
+<!--    })-->
+<!--</script>-->
+<div class="container" id="app">
+    <h3 class="text-center">VueNews</h3>
+    <div class="columns medium-3" v-for="result in results">
+        <div class="card">
+            <div class="card-divider">
+                {{ result.title }}
+            </div>
+            <div class="card-section">
+                <p>{{ result.abstract }}.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://unpkg.com/vue"></script>
+<!--<script src="app.js"></script>-->
+<script>
+    const vm = new Vue({
+    el: '#app',
+    data: {
+        results: [
+            {title: "the very first post", abstract: "lorem ipsum some test dimpsum"},
+            {title: "and then there was the second", abstract: "lorem ipsum some test dimsum"},
+            {title: "third time's a charm", abstract: "lorem ipsum some test dimsum"},
+            {title: "four the last time", abstract: "lorem ipsum some test dimsum"}
+        ]
+    }
+});
+</script>
+</body>
+</html>

@@ -25,11 +25,15 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-aop'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.flywaydb:flyway-core'
-	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.0.1'
+//	implementation 'org.flywaydb:flyway-core'
+//	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.0.1'
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'org.springframework.boot:spring-boot-devtools'
-	runtimeOnly 'mysql:mysql-connector-java'
+//	runtimeOnly 'mysql:mysql-connector-java'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	compile('org.webjars:jquery:3.2.1')
+	compile('org.webjars:jquery-ui:1.12.1')
+	compile('org.webjars:bootstrap:4.0.0')
+	compile('com.fasterxml.jackson.datatype:jackson-datatype-jsr310')
 }
